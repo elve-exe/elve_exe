@@ -1,20 +1,13 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-auto';
 
-const dev = process.env.NODE_ENV === 'development';
-
-export default {
-  kit: {
-    adapter: adapter({
-      // This tells SvelteKit to generate a single-page app (SPA) with a fallback for dynamic routes.
-      fallback: 'index.html',
-    }),
-    paths: {
-      // Configure the base path for production. For development, base remains empty.
-      base: dev ? '' : '/<elve_exe>',
-    },
-    prerender: {
-      // Disable prerendering for dynamic routes or provide a handle for HTTP errors
-      handleHttpError: 'ignore', // Suppresses the error you're seeing
-    }
-  }
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	kit: {
+		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
+		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
+		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
+		adapter: adapter()
+	}
 };
+
+export default config;
