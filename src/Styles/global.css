@@ -29,8 +29,8 @@ h2{
 }
 
 .background {
-	background: url('/static/Background.png');
-  background-size: cover;
+	background: url('../Background.png');
+  	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
 }
