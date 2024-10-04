@@ -10,7 +10,7 @@ export default {
     }),
     paths: {
       // Configure the base path for production. For development, base remains empty.
-      base: dev ? '' : '/<repository-name>',
+      base: dev ? '' : '/<elve_exe>',
     },
     prerender: {
       // Disable prerendering for dynamic routes or provide a handle for HTTP errors
