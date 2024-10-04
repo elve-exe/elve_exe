@@ -1,0 +1,283 @@
+
+
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+		padding: 0;
+}
+
+h1, h2, h3, h4, a, p, li {
+    color: rgb(255, 255, 255);
+    font-family: "Kelly Slab", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 40px;
+}
+
+h2{
+	font-size: 30px;
+}
+
+.background {
+	background: url(Background.jpg);
+  background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.header{
+	width: 100%;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	display: block;
+
+}
+nav{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 28px;
+}
+
+.nav-links{
+	flex: 1;
+	text-align: center;
+	
+}
+
+.nav-links ul li{
+	list-style: none;
+	display: inline-block;
+	padding: 8px 12px;
+	position: relative;
+}
+
+.nav-links ul li a{
+	color: white;
+	text-decoration: none;
+}
+
+.nav-links ul li::after{
+	content: '';
+	width: 0%;
+	height: 2px;
+	background: white;
+	display: block;
+	margin: auto;
+	transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+	width: 100%;
+}
+
+@keyframes flicker{
+
+    0%, 100% {
+        text-shadow: 0 0 5px #ffefef, 
+                     0 0 10px #777777, 
+                     0 0 15px #ffefef, 
+                     0 0 20px #ffefef, 
+                     0 0 30px #ffefef,
+					 0 0 45px #ffefef, 
+                     0 0 60px #ffefef;
+    }
+    20% {
+        text-shadow: 0 0 3px #ffefef, 
+                     0 0 7px #777777, 
+                     0 0 10px #ffefef;
+    }
+    40% {
+        text-shadow: 0 0 1px #ffefef, 
+                     0 0 4px #777777, 
+                     0 0 8px #ffefef;
+    }
+    75% {
+        text-shadow: 0 0 8px #ffefef, 
+                     0 0 12px #777777, 
+                     0 0 30px #ffefef;
+    }
+	}
+
+	@keyframes text-flicker{
+    25% {
+        text-shadow: unset;
+    }
+	}
+
+	.image-box {
+		display: flex;
+		justify-content: center;
+		gap: 2%;
+		background: rgba(67, 67, 67, 0.2); 
+		backdrop-filter: blur(5px); 
+		-webkit-backdrop-filter: blur(10px); /* Support for Safari */
+		border-radius: 10px; 
+		padding: 30px;
+		padding-left: 60px; padding-right: 60px ; 
+		box-shadow: inset 0 0 16px -12px white;
+	}
+
+	.image-box:hover {
+		box-shadow: unset;
+	}
+	
+	.long-box {
+		display: flex;
+		justify-content: center;
+		background: rgba(34, 34, 34, 0.5); 
+		backdrop-filter: blur(5px); 
+		-webkit-backdrop-filter: blur(10px); 
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
+		margin-bottom: 5%;
+	}
+
+	.glow-button {
+		background-color: #333; 
+		color: #fff; 
+		border: none; 
+		padding: 15px 30px; 
+		font-size: 4em; 
+		font-weight: 600; 
+		border-radius: 30px; 
+		cursor: pointer; 
+		position: relative; 
+		transition: all 0.3s ease; 
+		outline: none; 
+		box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); 
+	}
+	
+	.glow-button:hover {
+		color: #fff; 
+		background-color: #444; 
+		box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 
+					0 0 30px rgba(255, 255, 255, 0.4),
+					0 0 40px rgba(255, 255, 255, 0.2);
+	}
+	
+	.glow-button:active {
+		transform: scale(0.98); 
+	}
+
+	.overlay-hover{
+		opacity: 0;
+	}
+
+	.common-button{
+	padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease;
+	}
+	
+	.common-button:hover{
+		box-shadow: 0 0 15px white;  
+    	background-color: rgba(255, 255, 255, 0.1); 
+    	transform: scale(1.05);  
+	}
+
+	.endPage{
+		text-align: center;
+	}
+	
+	.social-icons {
+		display: flex;              
+		justify-content: center;     
+		align-items: center;         
+		gap: 2%;                  
+		padding: 1%;
+	}
+	
+	/* ---------------device friendly stuff-------------- */
+
+	@media (min-width: 320px) and (max-width: 1000px){
+
+		.logo-container img {
+			max-width: 200px; /* Reduce the logo size */
+			height: auto;
+			display: block;
+			margin: 0 auto; /* Center the logo */
+			padding-top: 4%;
+		}
+	
+		.contacts img{
+			max-width: 200px;
+		}
+
+		/* Navigation */
+		nav ul {
+			padding: 0;
+			margin: 0;
+			justify-content: center; /* Keep items in one line */
+		}
+	
+		nav ul li {
+			margin: 0 0px; /* Reduce spacing between items */
+		}
+	
+		nav ul li a {
+			font-size: 16px; /* Smaller text for nav items */
+			padding: 0px;
+		}
+	
+		h1{
+			font-size: 20px;
+		}
+
+		h2, h3, h4{
+			font-size: 18px;
+		}
+
+	
+		.image-row-1 {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+			flex-direction: column; /* Images stacked within each row */
+		}
+	
+		.image-box img {
+			border-radius: 5px;
+			height: 10vh; /* Smaller height for images */
+			width: 100%; /* Full-width images */
+			object-fit: cover;
+		}
+	
+		/* Overlay text on images */
+		.overlay-text {
+			font-size: 34px !important; /* Smaller text for image overlay */
+
+		}
+
+		.about-box{
+			width: 90% !important;
+		}
+
+
+	}
+	
