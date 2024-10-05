@@ -7,7 +7,7 @@ const config = {
 			fallback: '404.html'
 		}),
 		paths: {
-			base: process.argv.includes('elve-exe') ? '' : process.env.BASE_PATH
+			base: process.argv.includes('app') ? '' : process.env.BASE_PATH
 		}
 	}
 };
